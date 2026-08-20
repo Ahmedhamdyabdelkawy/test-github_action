@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@4.2.2
+      uses: actions/checkout@v2.8.0
     
 
     - name: Run tests
