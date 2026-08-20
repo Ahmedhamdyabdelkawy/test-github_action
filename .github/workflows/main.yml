@@ -12,6 +12,15 @@ jobs:
     steps:
       - name: Print a welcom message
         run: echo "welcom to our frist Github actions "
+
+      - name: cheackout repo
+        uses: actions/checkout@v2.8.0
+
+      - name: list all files
+        run: ls -la
+      
+         
+        
       
   
       
