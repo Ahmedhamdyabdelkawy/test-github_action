@@ -1,0 +1,14 @@
+
+{
+  "name": "test-github_action",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "test-github_action",
+      "version": "1.0.0",
+      "license": "MIT"
+    }
+  }
+}
