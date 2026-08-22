@@ -17,10 +17,24 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v6
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+
+    - name: Update npm to the latest version
+      run: npm install -g npm@latest
+
+
+    - name: Clean npm cache
+      run: npm cache clean --force
+
+
+    - name: Delete node modules and package-lock.json
+      run: |
+        rm -rf node_modules
+        rm package-lock.json
+
+
+    - name: Install dependencies
+      run: npm install
+
+
     - name: Run tests
       run: npm test
