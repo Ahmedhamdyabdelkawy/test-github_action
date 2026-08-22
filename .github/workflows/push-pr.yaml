@@ -17,11 +17,10 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v6
-
-    - name: solve error  
-      run: sudo chown -R 501:20 “/Users/myusername/.npm 
-
       
+    - name: # delete node modules
+      run: rm -rf node_modules  
+
     - name: Update npm to the latest version
       run: npm install -g npm@latest
 
