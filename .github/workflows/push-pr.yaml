@@ -1,3 +1,5 @@
+name: CI
+
 on:
   push:
     branches:
@@ -15,25 +17,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v6
-      
-    - name: # delete node modules
-      run: rm -rf node_modules  
+      - name: Checkout repo
+        uses: actions/checkout@v6
 
-    - name: Update npm to the latest version
-      run: npm install -g npm@latest
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
 
+      - name: Install dependencies
+        run: npm install
 
-    - name: Clean npm cache
-      run: npm cache clean --force
-
-
-    
-
-    - name: Install dependencies
-      run: npm install
-
-
-    - name: Run tests
-      run: npm test
+      - name: Run tests
+        run: npm test
